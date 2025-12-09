@@ -1,0 +1,22 @@
+{
+  "name": "playwright-fw-e2e",
+  "version": "1.0.0",
+  "description": "This is the project for building PW Automation E2E Framework",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VIVEKVPA/playwright-fw-e2e.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VIVEKVPA/playwright-fw-e2e/issues"
+  },
+  "homepage": "https://github.com/VIVEKVPA/playwright-fw-e2e#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.2"
+  }
+}
