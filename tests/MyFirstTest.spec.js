@@ -96,7 +96,7 @@ test('Register to RSAcademy', async ({page}) => {
 
 })
 
-test.only('Login to RSAcademy', async ({page}) => {
+test('Login to RSAcademy', async ({page}) => {
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login")
     await page.locator('#userEmail').fill('vivek123@example.com')
     await page.locator('#userPassword').fill('Hknd@u72')
@@ -105,8 +105,26 @@ test.only('Login to RSAcademy', async ({page}) => {
     const loginSuccessfullyText = page.getByText('Login Successfully', { exact: true });
     await expect(loginSuccessfullyText).toBeVisible()
     await page.waitForLoadState('networkidle')
+    await page.locator('.card-body b').first().waitFor()
     const card_titles = await page.locator('.card-body b').allTextContents()
     console.log(card_titles)
     expect(card_titles).toContain('ADIDAS ORIGINAL')
+})
+
+test.only('Login to RSAcademy as Cunsulatant', async ({page}) => {
+    await page.goto('https://rahulshettyacademy.com/loginpagePractise/')
+    const usernameInput = page.getByRole('textbox', { name: 'Username:', exact: true });
+    await usernameInput.fill('rahulshettyacademy');
+    const passwordInput = page.getByRole('textbox', { name: 'Password:', exact: true });
+    await passwordInput.fill('Learning@830$3mK2');
+    await page.getByRole('radio', {name:'user', checked:false}).check()
+    await page.locator('#okayBtn').click()
+    await page.locator('select.form-control').selectOption('Consultant')
+    const termsCheckbox = page.locator(`#terms`);
+    await termsCheckbox.check();
+    await expect(termsCheckbox).toBeChecked()
+    const signInBtnButton = page.getByRole('button', { name: 'Sign In', exact: true });
+    await signInBtnButton.click();
+    await expect(page).toHaveURL('https://rahulshettyacademy.com/angularpractice/shop')
 })
 
