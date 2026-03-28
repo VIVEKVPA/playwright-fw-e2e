@@ -26,7 +26,7 @@ test('Child window handling', async({browser}) => {
 
 })
 
-test.only('E2E shopping cart', async({browser}) => {
+test('E2E shopping cart', async({browser}) => {
     let username = "vivek123@example.com"
     let pwd = "Hknd@u72"
     const context = await browser.newContext()
@@ -123,5 +123,4 @@ test.only('E2E shopping cart', async({browser}) => {
     const orderDetails = await page.locator('div.col-text').textContent()
     expect(orderDetails).toEqual(orderId)
     expect(orderId.includes(orderDetails)).toBeTruthy();
-    await page.pause()
 })

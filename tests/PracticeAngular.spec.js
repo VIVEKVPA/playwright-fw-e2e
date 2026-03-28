@@ -1,7 +1,7 @@
 import {expect, test} from '@playwright/test'
 
 
-test.only('Practice angular - locator strategies', async({page}) => {
+test('Practice angular - locator strategies', async({page}) => {
 
     await page.goto('https://rahulshettyacademy.com/angularpractice/')
     await page.waitForLoadState('networkidle')
@@ -41,6 +41,4 @@ test.only('Practice angular - locator strategies', async({page}) => {
 
     await expect(checkoutButton).toContainText('1')
     await checkoutButton.click()
-
-    await page.pause()
 })
