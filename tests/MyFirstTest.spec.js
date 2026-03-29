@@ -111,7 +111,7 @@ test('Login to RSAcademy', async ({page}) => {
     expect(card_titles).toContain('ADIDAS ORIGINAL')
 })
 
-test.only('Login to RSAcademy as Cunsulatant', async ({page}) => {
+test('Login to RSAcademy as Cunsulatant', async ({page}) => {
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/')
     const usernameInput = page.getByRole('textbox', { name: 'Username:', exact: true });
     await usernameInput.fill('rahulshettyacademy');
