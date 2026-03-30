@@ -16,7 +16,8 @@ test('Handle the calendar', async ({page}) => {
     await datepicker.click()
 
     const yearEle = await page.locator('.react-calendar__navigation__label')
-    await yearEle.dblclick()
+    await yearEle.click()
+    await yearEle.click()
 
     const selectYear = await page.getByText(year)
     await selectYear.click()
