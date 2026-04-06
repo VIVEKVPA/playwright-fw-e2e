@@ -1,13 +1,13 @@
-import { expect, test } from '@playwright/test'
+import {test, expect} from '@playwright/test'
 
+let webContext
+let username = "vivek123@example.com"
+let pwd = "Hknd@u72"
+test.beforeAll( async ({browser}) => {
 
-test('E2E shopping cart', async({browser}) => {
-    let username = "vivek123@example.com"
-    let pwd = "Hknd@u72"
     const context = await browser.newContext()
     const page = await context.newPage()
-    await page.goto('https://rahulshettyacademy.com/client/#/auth/login')
-    await page.waitForLoadState('domcontentloaded', {timeout:8000})
+    await page.goto('https://rahulshettyacademy.com/client')
     await page.waitForLoadState('networkidle')
     const userEmailInput = page.getByPlaceholder('email@example.com')
     await userEmailInput.fill(username)
@@ -17,7 +17,15 @@ test('E2E shopping cart', async({browser}) => {
     await loginButton.click()
     const productz = page.locator('#products')
     await expect(productz).toBeVisible()
+    await context.storageState({path: 'state.json'})
+    webContext = await browser.newContext({storageState: 'state.json'})
 
+})
+
+test('Use stored session data for login', async () => {
+
+    const page = await webContext.newPage()
+    await page.goto('https://rahulshettyacademy.com/client')
     await page.locator('.card-body').filter({hasText:'ZARA COAT 3'})
     .getByRole('button', {name:'Add to Cart'}).click()
     
