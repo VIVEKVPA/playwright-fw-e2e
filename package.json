@@ -19,6 +19,7 @@
   "homepage": "https://github.com/VIVEKVPA/playwright-fw-e2e#readme",
   "devDependencies": {
     "@playwright/test": "^1.57.0",
-    "@types/node": "^24.10.2"
+    "@types/node": "^24.10.2",
+    "exceljs": "^4.4.0"
   }
 }
