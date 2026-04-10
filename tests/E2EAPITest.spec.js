@@ -1,5 +1,5 @@
 import { expect, request, test } from '@playwright/test'
-import { APIUtils } from './utils/APIUtils'
+import { APIUtils } from '../utils/APIUtils'
 const loginRequest = {userEmail:"vivek123@example.com",userPassword:"Hknd@u72"}
 const createOrdRequest = {orders:[{country:"Cuba",productOrderedId:"6960eae1c941646b7a8b3ed3"}]}
 let response

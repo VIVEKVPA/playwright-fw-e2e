@@ -1,4 +1,4 @@
-import { expect, request, test } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test('E2E shopping cart - login API', async ({ page }) => {
     let username = "vivek123@example.com"

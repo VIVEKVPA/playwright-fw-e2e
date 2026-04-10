@@ -1,5 +1,4 @@
 import {expect, test} from '@playwright/test'
-import { timeLog } from 'console'
 
 
 test('Back and Forward test', async ({page}) => {

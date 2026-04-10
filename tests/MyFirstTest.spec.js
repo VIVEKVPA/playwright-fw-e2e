@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-
+// test.describe.configure({ mode: 'serial' });
 test('Launch New Context Browser', async({browser})=> {
     const context = await browser.newContext()
     const page = await context.newPage()
@@ -7,7 +7,7 @@ test('Launch New Context Browser', async({browser})=> {
     await expect(page).toHaveTitle('Register Account')
 })
 
-test('Customer Login', async({page})=> {
+test('@Web Customer Login', async({page})=> {
     await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=account/login')
     await expect(page).toHaveTitle('Account Login')
 
@@ -30,7 +30,7 @@ test('Customer Registration', async({page})=> {
     await page.locator('input[type="submit"][value="Continue"]').click()
 })
 
-test('Login to RSAcademy - Invalid Credentials', async ({browser}) => {
+test('@Web Login to RSAcademy - Invalid Credentials', async ({browser}) => {
 
     const context = await browser.newContext()
     const page = await context.newPage()
