@@ -19,7 +19,7 @@ test.beforeAll( async () => {
     
 })
 
-test('E2E shopping cart - login API', async({browser}) => {
+test('@API E2E shopping cart - login API', async({browser}) => {
     const context = await browser.newContext()
     const page = await context.newPage()
 

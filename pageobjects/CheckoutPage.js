@@ -1,4 +1,5 @@
-import { expect } from '@playwright/test'
+// import { expect } from '@playwright/test'
+const { expect } = require('@playwright/test')
 
 class CheckoutPage {
 
@@ -24,3 +25,4 @@ class CheckoutPage {
 }
 
 module.exports = { CheckoutPage }
+// export { CheckoutPage }

@@ -1,8 +1,14 @@
-import { LoginPage } from '../pageobjects/LoginPage'
-import { DashboardPage } from '../pageobjects/DashboardPage'
-import { CheckoutPage } from '../pageobjects/CheckoutPage'
-import { OrderConfirmationPage } from '../pageobjects/OrderConfirmationPage'
-import { OrderDetailsPage } from '../pageobjects/OrderDetailsPage'
+// import { LoginPage } from '../pageobjects/LoginPage.js'
+// import { DashboardPage } from '../pageobjects/DashboardPage.js'
+// import { CheckoutPage } from '../pageobjects/CheckoutPage.js'
+// import { OrderConfirmationPage } from '../pageobjects/OrderConfirmationPage.js'
+// import { OrderDetailsPage } from '../pageobjects/OrderDetailsPage.js'
+
+const { LoginPage } = require('../pageobjects/LoginPage.js')
+const { DashboardPage } = require('../pageobjects/DashboardPage.js')
+const { CheckoutPage } = require('../pageobjects/CheckoutPage.js')
+const { OrderConfirmationPage } = require('../pageobjects/OrderConfirmationPage.js')
+const { OrderDetailsPage } = require('../pageobjects/OrderDetailsPage.js')
 
 class POManager {
 
@@ -36,4 +42,5 @@ class POManager {
     }
 }
 
-module.exports = {POManager}
+module.exports = { POManager }
+// export { POManager }

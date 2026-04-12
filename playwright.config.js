@@ -25,14 +25,21 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 1,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 3 : undefined,
+  workers: process.env.CI ? 3 : 3,
+  reporter: process.env.CI ? 'github' : 'html',
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  // reporter: [
+  //   ['html'],
+  //   ['list'],
+  //   ['@estruyf/github-actions-reporter'],
+  //   ['allure-playwright']
+  // ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     browserName: 'chromium',
     headless: true,
     video: 'off',
+    screenshot: 'on',
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
