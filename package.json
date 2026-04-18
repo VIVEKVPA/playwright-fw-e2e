@@ -1,0 +1,37 @@
+{
+  "name": "playwright-fw-e2e",
+  "version": "1.0.0",
+  "description": "This is the project for building PW Automation E2E Framework",
+  "main": "index.js",
+  "scripts": {
+    "test_web": "npx playwright test --grep @Web",
+    "test_api": "npx playwright test --grep @API",
+    "regression": "npx playwright test",
+    "cucumber_test": "npx cucumber-js features/BDD_E2E_EShoppingExperience.feature --parallel 2  --exit --format html:cucumber-report.html",
+    "allure:report": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VIVEKVPA/playwright-fw-e2e.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VIVEKVPA/playwright-fw-e2e/issues"
+  },
+  "homepage": "https://github.com/VIVEKVPA/playwright-fw-e2e#readme",
+  "devDependencies": {
+    "@estruyf/github-actions-reporter": "^1.11.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.2",
+    "allure-commandline": "^2.38.1",
+    "allure-playwright": "^3.7.1",
+    "exceljs": "^4.4.0"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^12.7.0",
+    "@playwright/cli": "^0.1.7"
+  }
+}

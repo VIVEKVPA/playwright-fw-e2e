@@ -1,0 +1,16 @@
+[
+    {
+        "username": "vivek123@example.com",
+        "password": "Hknd@u72",
+        "productName": "ZARA COAT 3",
+        "searchCountry": "ind",
+        "country": "India"
+    },
+    {
+        "username": "vivek123@example.com",
+        "password": "Hknd@u72",
+        "productName": "ADIDAS ORIGINAL",
+        "searchCountry": "cub",
+        "country": "Cuba"
+    }
+]
